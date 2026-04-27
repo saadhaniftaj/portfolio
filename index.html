@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saad Hanif Taj — Product & Engineering Portfolio</title>
+    <meta name="description" content="Builder-first AI Product Manager. Shipping zero-to-one AI products with hands-on engineering. Portfolio of consumer AI, enterprise automation, systems architecture, and agentic tooling." />
+    <meta name="author" content="Saad Hanif Taj" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Saad Hanif Taj</a>
+            <div class="nav-links">
+                <a href="#portfolio" class="nav-link">Work</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <!-- Animated background canvas -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header id="hero">
+        <div class="hero-inner">
+            <div class="hero-profile">
+                <div class="hero-avatar-wrap">
+                    <img src="me.JPG" alt="Saad Hanif Taj" class="hero-avatar" width="96" height="96" />
+                </div>
+            </div>
+            <div class="hero-badge">Builder-first PM</div>
+            <h1>Product &amp; Engineering Portfolio</h1>
+            <p class="hero-sub">
+                I build AI products end-to-end. I don't manage tickets; I sketch the interfaces,
+                architect the data models, and vibe-code the prototypes that get shipped.
+            </p>
+
+            <!-- Contact links under hero -->
+            <div class="hero-contacts">
+                <a href="https://www.linkedin.com/in/saadhaniftaj/" target="_blank" rel="noopener noreferrer" class="hero-contact-link" id="contact-linkedin">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <span class="hero-contact-divider"></span>
+                <a href="https://github.com/saadhaniftaj" target="_blank" rel="noopener noreferrer" class="hero-contact-link" id="contact-github">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
+                </a>
+                <span class="hero-contact-divider"></span>
+                <a href="mailto:saadhaniftaj@outlook.com" class="hero-contact-link" id="contact-email">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    saadhaniftaj@outlook.com
+                </a>
+            </div>
+
+            <div class="hero-line"></div>
+        </div>
+    </header>
+
+    <!-- ========== PORTFOLIO ========== -->
+    <main id="portfolio">
+
+        <!-- ===== SECTION 1 ===== -->
+        <section class="portfolio-section" id="section-consumer-ai">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>AI Consumer Products &amp; Zero-to-One MVPs</h2>
+                <p class="section-desc">End-to-end product ownership: from ambiguous problem space to vibe-coded prototypes and production-ready deployments.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card: Tempo Voice -->
+                <article class="card card--wide" id="card-tempo-voice">
+                    <div class="card-inner">
+                        <span class="card-client">Tempo AI, New Jersey, US</span>
+                        <h3 class="card-title">Tempo Voice — AI Telephony Platform</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Medical clinics needed a reliable, HIPAA-compliant conversational AI to handle patient telephony.</p>
+                            <p><strong class="card-label">The Product:</strong> Engineered a HIPAA-compliant, real-time voice AI for medical clinics. Prototyped the initial WebSocket architecture on AWS App Runner, then scaled it to a multi-tenant AWS environment with CI/CD. Integrated AWS Bedrock Guardrails to ensure grounded, medically safe responses from the AI receptionist.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">AWS Bedrock (Nova Sonic)</span>
+                            <span class="tag">Twilio</span>
+                            <span class="tag">AWS App Runner</span>
+                            <span class="tag">Serverless (Lambda, Fargate)</span>
+                            <span class="tag">Amazon ECR</span>
+                            <span class="tag">WebSockets</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: VisaOS -->
+                <article class="card" id="card-visaos">
+                    <div class="card-inner">
+                        <span class="card-client">Sebastian Krakowski, US/Poland</span>
+                        <h3 class="card-title">VisaOS — The Immigration Operating System</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> U.S. visa eligibility (O-1A, E-2) is buried in dense legal jargon and expensive attorney consultations.</p>
+                            <p><strong class="card-label">The Product:</strong> Built a 2026 USCIS-compliant AI engine evaluating O-1A and E-2 visa eligibility. Vibe-coded a low-friction "Zen Mode" dynamic questionnaire and implemented document intelligence (simulating Textract/Bedrock) to parse passports. Shipped a production-ready MVP that scores legal criteria, identifies evidence gaps, and replaces initial attorney consultations.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Next.js 15</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL 16</span>
+                            <span class="tag">JWT/Argon2</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: EcoBrief -->
+                <article class="card" id="card-ecobrief">
+                    <div class="card-inner">
+                        <span class="card-client">Confidential, Canada</span>
+                        <h3 class="card-title">EcoBrief — Distributed AI News Oracle</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Hosting large language models for continuous news curation incurs massive idle cloud costs.</p>
+                            <p><strong class="card-label">The Product:</strong> Built an autonomous news oracle that scrapes data, summarizes it via Small Language Models (SLMs), and generates audio briefings. Implemented a strict "Scale-to-Zero" FinOps architecture using Boto3 to dynamically boot and terminate EC2 instances during inference, eliminating idle cloud costs. Vibe-coded a minimalist React frontend for native audio playback.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Ray Serve</span>
+                            <span class="tag">llama-cpp-python</span>
+                            <span class="tag">Quantized 3B LLMs</span>
+                            <span class="tag">AWS S3</span>
+                            <span class="tag">AWS Polly</span>
+                            <span class="tag">Boto3</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2 ===== -->
+        <section class="portfolio-section" id="section-enterprise-ai">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Enterprise AI &amp; Workflow Automation</h2>
+                <p class="section-desc">Taking messy, unstructured enterprise data and compliance hurdles, and breaking them into structured, automated solutions.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card: Azure Pipeline -->
+                <article class="card" id="card-azure-pipeline">
+                    <div class="card-inner">
+                        <span class="card-client">Nissi Fulfilment &amp; Distribution, Ohio, US</span>
+                        <h3 class="card-title">Azure-Powered Data Logistics Pipeline</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Logistics operators were losing hours manually consolidating unstructured shipping data.</p>
+                            <p><strong class="card-label">The Product:</strong> Built an internal automation product transforming 500+ unstructured PDFs and inconsistent Excel sheets into database-ready formats for automated label printing. Engineered the extraction logic using Azure Cognitive Services and shipped a zero-code Python Flask UI for warehouse staff, cutting processing from hours to minutes.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Azure Cognitive Services</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: WAI -->
+                <article class="card" id="card-wai">
+                    <div class="card-inner">
+                        <span class="card-client">Get Efficient, New Jersey, US</span>
+                        <h3 class="card-title">Work Ability Index (WAI) Analysis Tool</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Researchers needed a tool to process clinical demographic data to correlate work ability with psychological health.</p>
+                            <p><strong class="card-label">The Product:</strong> Developed an analytical web app for university researchers. Built drag-and-drop ingestion for bulk Excel files, mapped 20+ clinical variables, and automated complex statistical methodologies (Multiple Regression, T-Tests). Designed a dark-themed UI optimized for extended research environments.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Advanced Data Parsing</span>
+                            <span class="tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: VirtualthreadsMesh -->
+                <article class="card card--wide" id="card-virtualthreadsmesh">
+                    <div class="card-inner">
+                        <span class="card-client">Confidential, Canada</span>
+                        <h3 class="card-title">VirtualthreadsMesh — Autonomous API Gateway</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Traditional API Gateways are passive and require manual human intervention during traffic anomalies.</p>
+                            <p><strong class="card-label">The Product:</strong> Architected and delivered a self-healing API service mesh using Java 21 Virtual Threads (Loom) for sub-millisecond overhead. Designed a closed-loop system where Kafka streams request telemetry to an AI Advisor, which autonomously updates rate limits and trips circuit breakers in Redis without manual intervention.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Java 21 Virtual Threads (Loom)</span>
+                            <span class="tag">Spring Cloud</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Event-Driven AI</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3 ===== -->
+        <section class="portfolio-section" id="section-systems-architecture">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Systems Architecture &amp; Strategic Scoping</h2>
+                <p class="section-desc">Proving the technical chops to reason about APIs, read backend code, and define sharp MVP boundaries.</p>
+            </div>
+
+            <div class="bento-grid bento-grid--two">
+                <!-- Card: Funk House -->
+                <article class="card" id="card-funk-house">
+                    <div class="card-inner">
+                        <span class="card-client">Funk House Productions, LA/Atlanta, US</span>
+                        <h3 class="card-title">Funk House AI Music Engineer</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Automating music engineering is computationally heavy; scoping an MVP requires strict boundaries to avoid failing delivery.</p>
+                            <p><strong class="card-label">The Product:</strong> Architected an 8-week MVP roadmap for a closed-beta AI Audio Engine handling 4-stem separation and genre-based mixing. Wrote a crisp PRD that deferred payment gateways to Phase 2, focusing 100% of engineering on the core value proposition: lossless ingest, Librosa key extraction, Demucs ML, and serverless GPU processing.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">FFmpeg</span>
+                            <span class="tag">Librosa</span>
+                            <span class="tag">Demucs ML</span>
+                            <span class="tag">Spotify Pedalboard API</span>
+                            <span class="tag">Matchering</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: CT Head -->
+                <article class="card" id="card-ct-head">
+                    <div class="card-inner">
+                        <span class="card-client">Sebastian Krakowski, US/Poland</span>
+                        <h3 class="card-title">CT Head AI-Assisted Reporting — Hospital Pilot Workflow</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Problem:</strong> Introducing AI into hospital radiology faces massive resistance from IT compliance and administration.</p>
+                            <p><strong class="card-label">The Product:</strong> Scoped and architected a radiologist-in-the-loop AI CT reporting workflow. Authored the hospital-approval-ready SOW and HIPAA-eligible AWS VPC architecture. Defined strict clinical boundaries ("Draft Assistance" only), DICOM ingestion pipelines, and mandatory human-in-the-loop risk controls to successfully bypass severe hospital IT resistance.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">AWS HealthImaging (DICOM)</span>
+                            <span class="tag">Amazon SageMaker</span>
+                            <span class="tag">AWS Batch</span>
+                            <span class="tag">React</span>
+                            <span class="tag">CloudTrail/GuardDuty</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4 ===== -->
+        <section class="portfolio-section" id="section-micro-products">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2>Micro-Products, Plugins &amp; Agentic Tooling</h2>
+                <p class="section-desc">Shipping features in days, integrating AI-native tooling, and iterating rapidly.</p>
+            </div>
+
+            <div class="bento-grid bento-grid--four">
+                <!-- Card: SmartCrop -->
+                <article class="card" id="card-smartcrop">
+                    <div class="card-inner">
+                        <span class="card-client">Oystermouth Primary Schools, UK</span>
+                        <h3 class="card-title">SmartCrop Pro — AI Photo Cropping Engine</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Product:</strong> Shipped an AI-powered AWS Lambda microservice for automated school portrait cropping. Engineered multi-strategy detection (Face + Person + Background) to account for raised arms and furniture. Integrated directly into a Laravel app, cutting manual cropping time by 80% for UK schools.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">Computer Vision/AI</span>
+                            <span class="tag">PHP/Laravel</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: Monday MCP -->
+                <article class="card" id="card-monday-mcp">
+                    <div class="card-inner">
+                        <span class="card-client">Get Efficient, New Jersey, US</span>
+                        <h3 class="card-title">Monday.com MCP Server</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Product:</strong> Built a Model Context Protocol (MCP) server bridging Monday.com with AI platforms. Shipped three architectural variations (Dify.ai, n8n, standalone app) enabling custom AI agents to securely read, contextualize, and manipulate project management boards in real-time.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Model Context Protocol (MCP)</span>
+                            <span class="tag">Node.js/Python</span>
+                            <span class="tag">Monday.com APIs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: Resume Scoring -->
+                <article class="card" id="card-resume-scoring">
+                    <div class="card-inner">
+                        <span class="card-client">The Growth Spark, Canada</span>
+                        <h3 class="card-title">AI Resume Scoring &amp; Matching Engine</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Product:</strong> Built an AI backend to evaluate and grade resumes against job descriptions. Designed a hybrid scoring algorithm blending DeepSeek R1 and Sentence Transformers for semantic similarity with zero-tolerance regex logic to strictly enforce hard business prerequisites.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">AWS Bedrock</span>
+                            <span class="tag">DeepSeek R1</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Sentence Transformers</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card: Nemo STT -->
+                <article class="card" id="card-nemo-stt">
+                    <div class="card-inner">
+                        <span class="card-client">Creative Agency, Morocco</span>
+                        <h3 class="card-title">Nemo Speech-to-Text Pipeline</h3>
+                        <div class="card-body">
+                            <p><strong class="card-label">The Product:</strong> Deployed a serverless pipeline invoking a custom speech processing model using Nemo's forced aligner. Integrated AWS SageMaker for ML inference, Lambda for orchestration, and API Gateway for secure real-time access.</p>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">AWS SageMaker</span>
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">API Gateway</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="site-footer">
+        <div class="footer-inner">
+            <span class="footer-name">Saad Hanif Taj</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/saadhaniftaj/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/saadhaniftaj" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:saadhaniftaj@outlook.com">saadhaniftaj@outlook.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
