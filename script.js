@@ -13,7 +13,7 @@
     const canvas = document.getElementById('bg-canvas');
     const ctx    = canvas.getContext('2d');
 
-    const PARTICLE_COUNT = 55;
+    const PARTICLE_COUNT = 120;
     const ACCENT = { r: 0, g: 255, b: 204 };
 
     let W, H, particles = [];
@@ -29,13 +29,13 @@
         return {
             x:     rand(0, W),
             y:     rand(0, H),
-            r:     rand(0.6, 2.2),
-            vx:    rand(-0.18, 0.18),
-            vy:    rand(-0.14, 0.14),
-            alpha: rand(0.04, 0.22),
+            r:     rand(0.8, 2.8),
+            vx:    rand(-0.22, 0.22),
+            vy:    rand(-0.18, 0.18),
+            alpha: rand(0.06, 0.30),
             // slow pulse
             pulse: rand(0, Math.PI * 2),
-            pulseSpeed: rand(0.004, 0.012),
+            pulseSpeed: rand(0.004, 0.014),
         };
     }
 
@@ -53,17 +53,17 @@
 
     // Draw soft lines between close particles
     function drawConnections() {
-        const maxDist = 180;
+        const maxDist = 220;
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const a = particles[i], b = particles[j];
                 const dx = a.x - b.x, dy = a.y - b.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < maxDist) {
-                    const alpha = (1 - dist / maxDist) * 0.045;
+                    const alpha = (1 - dist / maxDist) * 0.055;
                     ctx.beginPath();
                     ctx.strokeStyle = `rgba(${ACCENT.r},${ACCENT.g},${ACCENT.b},${alpha})`;
-                    ctx.lineWidth = 0.5;
+                    ctx.lineWidth = 0.6;
                     ctx.moveTo(a.x, a.y);
                     ctx.lineTo(b.x, b.y);
                     ctx.stroke();
@@ -144,9 +144,6 @@
     handleNavScroll();
 
 
-    // ─────────────────────────────────────────────────────────────
-    // 5. SMOOTH SCROLL for internal anchors
-    // ─────────────────────────────────────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
             const target = document.querySelector(anchor.getAttribute('href'));
@@ -156,5 +153,31 @@
             }
         });
     });
+
+
+    // ─────────────────────────────────────────────────────────────
+    // 6. ACTIVE NAV SECTION — highlight category link on scroll
+    // ─────────────────────────────────────────────────────────────
+    const sectionLinks = document.querySelectorAll('.nav-section-link');
+    const sectionIds = ['section-consumer-ai','section-enterprise-ai','section-systems-architecture','section-micro-products'];
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const id = entry.target.id;
+            const link = document.querySelector(`.nav-section-link[href="#${id}"]`);
+            if (!link) return;
+            if (entry.isIntersecting) {
+                sectionLinks.forEach(l => l.classList.remove('is-active'));
+                link.classList.add('is-active');
+            }
+        });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+    sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+
 
 })();
