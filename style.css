@@ -248,7 +248,7 @@ strong {
     justify-content: center;
     text-align: center;
     padding: 60px 48px 60px 0;
-    border-right: 1px solid var(--border-dim);
+
     gap: var(--space-lg);
     min-height: 100vh;
 }
