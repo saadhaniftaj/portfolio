@@ -233,42 +233,49 @@ strong {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    grid-template-columns: 380px 1fr;
+    gap: 0;
     align-items: center;
     width: 100%;
+    min-height: 100vh;
 }
 
-/* Left content column */
+/* LEFT: identity panel — centered, with right border */
 .hero-left {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 48px 60px 0;
+    border-right: 1px solid var(--border-dim);
+    gap: var(--space-lg);
+    min-height: 100vh;
 }
 
-/* Right: empty — particles show through */
+/* RIGHT: text content — vertically centered */
 .hero-right {
-    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0 60px 64px;
+    min-height: 100vh;
 }
 
 /* ── Profile Avatar ───────────────────────────────────────── */
-.hero-profile {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: var(--space-xl);
-}
-
 .hero-avatar-wrap {
     display: inline-block;
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     padding: 3px;
     background: linear-gradient(135deg, var(--accent) 0%, rgba(0, 255, 204, 0.2) 60%, transparent 100%);
     box-shadow:
         0 0 0 1px rgba(0, 255, 204, 0.15),
-        0 0 48px -4px rgba(0, 255, 204, 0.4);
+        0 0 56px -4px rgba(0, 255, 204, 0.4);
     animation: avatar-glow 4s ease-in-out infinite;
+    flex-shrink: 0;
 }
 
 @keyframes avatar-glow {
@@ -286,16 +293,16 @@ strong {
     background: var(--surface);
 }
 
-/* ── Identity block under avatar ────────────────────────── */
+/* ── Identity block ──────────────────────────────────── */
 .hero-identity {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    align-items: center;
 }
 
 .hero-name {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
     letter-spacing: -0.03em;
     color: var(--text-primary);
@@ -322,13 +329,13 @@ strong {
     color: var(--accent);
     background: var(--accent-dim);
     border: 1px solid rgba(0, 255, 204, 0.15);
-    padding: 5px 16px;
+    padding: 6px 18px;
     border-radius: 100px;
-    margin-bottom: var(--space-lg);
 }
 
+/* ── Right column text ─────────────────────────────────── */
 #hero h1 {
-    font-size: clamp(44px, 5.5vw, 72px);
+    font-size: clamp(36px, 4vw, 60px);
     font-weight: 800;
     line-height: 1.06;
     letter-spacing: -0.03em;
@@ -338,10 +345,11 @@ strong {
 }
 
 .hero-sub {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.75;
     color: var(--text-secondary);
     max-width: 100%;
+    margin-bottom: var(--space-lg);
 }
 
 /* ── Hero Contact Links ───────────────────────────────────── */
@@ -629,8 +637,20 @@ strong {
 @media (max-width: 900px) {
     .hero-inner {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
-    .hero-right { display: none; }
+    .hero-left {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-dim);
+        padding: 80px var(--space-lg) 48px;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .hero-right {
+        min-height: auto;
+        padding: 40px var(--space-lg) 60px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -649,12 +669,14 @@ strong {
     }
 
     #hero h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .hero-sub {
         font-size: 16px;
     }
+
+    .hero-name { font-size: 28px; }
 
     .portfolio-section {
         padding-top: var(--space-2xl);
